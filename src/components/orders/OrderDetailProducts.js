@@ -19,9 +19,9 @@ const OrderDetailProducts = (props) => {
     <table className="table border table-lg">
       <thead>
         <tr>
-          <th style={{ width: "40%" }}>Product</th>
-          <th style={{ width: "20%" }}>Unit Price</th>
-          <th style={{ width: "20%" }}>Quantity</th>
+          <th style={{ width: "40%" }}>Produit</th>
+          <th style={{ width: "20%" }}>Prix</th>
+          <th style={{ width: "20%" }}>Quantite</th>
           <th style={{ width: "20%" }} className="text-end">
             Total
           </th>
@@ -43,9 +43,9 @@ const OrderDetailProducts = (props) => {
                 <div className="info">{item.name}</div>
               </Link>
             </td>
-            <td>${item.price} </td>
+            <td>Ar{item.price} </td>
             <td>{item.qty} </td>
-            <td className="text-end"> ${item.qty * item.price}</td>
+            <td className="text-end"> Ar{item.qty * item.price}</td>
           </tr>
         ))}
 
@@ -53,10 +53,10 @@ const OrderDetailProducts = (props) => {
           <td colSpan="4">
             <article className="float-end">
               <dl className="dlist">
-                <dt>Subtotal:</dt> <dd>${order.itemsPrice}</dd>
+                <dt>Subtotal:</dt> <dd>Ar {order.itemsPrice}</dd>
               </dl>
               <dl className="dlist">
-                <dt>Shipping cost:</dt> <dd>${order.shippingPrice}</dd>
+                <dt>Shipping cost:</dt> <dd>Ar {order.shippingPrice}</dd>
               </dl>
               <dl className="dlist">
                 <dt>Grand total:</dt>

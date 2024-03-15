@@ -37,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/"  element={<HomeScreen />}exact />
           <Route path="/products" element={<ProductScreen />} />
-          <Route path="/category" element={<CategoriesScreen />} />
+          {/* <Route path="/category" element={<CategoriesScreen />} /> */}
           <Route path="/orders" element={<OrderScreen />} />
           <Route path="/order/:id" element={<OrderDetailScreen />} />
           <Route path="/addproduct" element={<AddProduct />} />

@@ -10,7 +10,7 @@ import Loading from "../LoadingError/Loading";
 
 const ToastObjects = {
   pauseOnFocusLoss: false,
-  draggable: false,
+  draggable: false, 
   pauseOnHover: false,
   autoClose: 2000,
 };
@@ -28,7 +28,7 @@ const AddProductMain = () => {
 
   useEffect(() => {
     if (product) {
-      toast.success("Product Added", ToastObjects);
+      toast.success("Produit Bien Ajouter", ToastObjects);
       dispatch({ type: PRODUCT_CREATE_RESET });
       setName("");
       setDescription("");
@@ -50,12 +50,12 @@ const AddProductMain = () => {
         <form onSubmit={submitHandler}>
           <div className="content-header">
             <Link to="/products" className="btn btn-danger text-white">
-              Go to products
+              Les Produits
             </Link>
-            <h2 className="content-title">Add product</h2>
+            <h2 className="content-title">Ajoutez Des Produits</h2>
             <div>
               <button type="submit" className="btn btn-primary">
-                Publish now
+                Publier
               </button>
             </div>
           </div>
@@ -68,11 +68,11 @@ const AddProductMain = () => {
                   {loading && <Loading />}
                   <div className="mb-4">
                     <label htmlFor="product_title" className="form-label">
-                      Product title
+                      Nom Produits
                     </label>
                     <input
                       type="text"
-                      placeholder="Type here"
+                      placeholder="Entre le nom du produit"
                       className="form-control"
                       id="product_title"
                       required
@@ -82,7 +82,7 @@ const AddProductMain = () => {
                   </div>
                   <div className="mb-4">
                     <label htmlFor="product_price" className="form-label">
-                      Price
+                      Prix
                     </label>
                     <input
                       type="number"
@@ -96,11 +96,11 @@ const AddProductMain = () => {
                   </div>
                   <div className="mb-4">
                     <label htmlFor="product_price" className="form-label">
-                      Count In Stock
+                      Nombre Des Produits
                     </label>
                     <input
                       type="number"
-                      placeholder="Type here"
+                      placeholder="Le stock que vous avez"
                       className="form-control"
                       id="product_price"
                       required
@@ -111,7 +111,7 @@ const AddProductMain = () => {
                   <div className="mb-4">
                     <label className="form-label">Description</label>
                     <textarea
-                      placeholder="Type here"
+                      placeholder="Description"
                       className="form-control"
                       rows="7"
                       required
@@ -129,7 +129,7 @@ const AddProductMain = () => {
                       required
                       onChange={(e) => setImage(e.target.value)}
                     />
-                    <input className="form-control mt-3" type="file" />
+                    {/* <input className="form-control mt-3" type="file"  value={image}   onChange={(e) => setImage(e.target.value)}/> */}
                   </div>
                 </div>
               </div>

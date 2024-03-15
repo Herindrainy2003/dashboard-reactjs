@@ -17,10 +17,10 @@ const UserComponent = () => {
   return (
     <section className="content-main">
       <div className="content-header">
-        <h2 className="content-title">Customers</h2>
+        <h2 className="content-title">Les utilisateurs</h2>
         <div>
           <Link to="#" className="btn btn-primary">
-            <i className="material-icons md-plus"></i> Create new
+            <i className="material-icons md-plus"></i> Creer
           </Link>
         </div>
       </div>
@@ -36,19 +36,19 @@ const UserComponent = () => {
               />
             </div>
             <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
+              {/* <select className="form-select">
                 <option>Show 20</option>
                 <option>Show 30</option>
                 <option>Show 40</option>
                 <option>Show all</option>
-              </select>
+              </select> */}
             </div>
             <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
+              {/* <select className="form-select">
                 <option>Status: all</option>
                 <option>Active only</option>
                 <option>Disabled</option>
-              </select>
+              </select> */}
             </div>
           </div>
         </header>
@@ -67,7 +67,7 @@ const UserComponent = () => {
                     <div className="card-header">
                       <img
                         className="img-md img-avatar"
-                        src="images/favicon.png"
+                        src="images/user.png"
                         alt="User pic"
                       />
                     </div>
@@ -77,7 +77,7 @@ const UserComponent = () => {
                         {user.isAdmin === true ? (
                           <p className="m-0">Admin</p>
                         ) : (
-                          <p className="m-0">Customer</p>
+                          <p className="m-0">Utilisateurs</p>
                         )}
 
                         <p>
@@ -96,7 +96,7 @@ const UserComponent = () => {
             <ul className="pagination">
               <li className="page-item disabled">
                 <Link className="page-link" to="#">
-                  Previous
+                  Precedent
                 </Link>
               </li>
               <li className="page-item active">
@@ -106,7 +106,7 @@ const UserComponent = () => {
               </li>
               <li className="page-item">
                 <Link className="page-link" to="#">
-                  Next
+                Suivant
                 </Link>
               </li>
             </ul>

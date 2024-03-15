@@ -20,9 +20,9 @@ const Main = () => {
         <TopTotal orders={orders} products={products} />
 
         <div className="row">
-          {/* STATICS */}
+          {/* STATICS
           <SaleStatistics />
-          <ProductsStatistics />
+          <ProductsStatistics /> */}
         </div>
 
         {/* LATEST ORDER */}

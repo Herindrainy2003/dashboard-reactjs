@@ -22,10 +22,10 @@ const MainProducts = () => {
   return (
     <section className="content-main">
       <div className="content-header">
-        <h2 className="content-title">Products</h2>
+        <h2 className="content-title">Produits</h2>
         <div>
           <Link to="/addproduct" className="btn btn-primary">
-            Create new
+           Creer
           </Link>
         </div>
       </div>
@@ -41,19 +41,19 @@ const MainProducts = () => {
               />
             </div>
             <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
-                <option>All category</option>
+              {/* <select className="form-select">
+                <option>Tous Les categories</option>
                 <option>Electronics</option>
                 <option>Clothings</option>
                 <option>Something else</option>
-              </select>
+              </select> */}
             </div>
             <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
+              {/* <select className="form-select">
                 <option>Latest added</option>
                 <option>Cheap first</option>
                 <option>Most viewed</option>
-              </select>
+              </select> */}
             </div>
           </div>
         </header>
@@ -79,7 +79,7 @@ const MainProducts = () => {
             <ul className="pagination">
               <li className="page-item disabled">
                 <Link className="page-link" to="#">
-                  Previous
+                  Precedent
                 </Link>
               </li>
               <li className="page-item active">
@@ -99,7 +99,7 @@ const MainProducts = () => {
               </li>
               <li className="page-item">
                 <Link className="page-link" to="#">
-                  Next
+                  Suivant
                 </Link>
               </li>
             </ul>

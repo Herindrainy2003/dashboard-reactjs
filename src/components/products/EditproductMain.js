@@ -42,7 +42,7 @@ const EditProductMain = (props) => {
   useEffect(() => {
     if (successUpdate) {
       dispatch({ type: PRODUCT_UPDATE_RESET });
-      toast.success("Product Updated", ToastObjects);
+      toast.success("Mise a jour bien effectue", ToastObjects);
     } else {
       if (!product.name || product._id !== productId) {
         dispatch(editProduct(productId));
@@ -77,12 +77,12 @@ const EditProductMain = (props) => {
         <form onSubmit={submitHandler}>
           <div className="content-header">
             <Link to="/products" className="btn btn-danger text-white">
-              Go to products
+              Les Produits
             </Link>
             <h2 className="content-title">Update Product</h2>
             <div>
               <button type="submit" className="btn btn-primary">
-                Publish now
+                Publier
               </button>
             </div>
           </div>
@@ -103,7 +103,7 @@ const EditProductMain = (props) => {
                     <>
                       <div className="mb-4">
                         <label htmlFor="product_title" className="form-label">
-                          Product title
+                          Nom produits
                         </label>
                         <input
                           type="text"
@@ -117,7 +117,7 @@ const EditProductMain = (props) => {
                       </div>
                       <div className="mb-4">
                         <label htmlFor="product_price" className="form-label">
-                          Price
+                          Prix
                         </label>
                         <input
                           type="number"
@@ -131,7 +131,7 @@ const EditProductMain = (props) => {
                       </div>
                       <div className="mb-4">
                         <label htmlFor="product_price" className="form-label">
-                          Count In Stock
+                          Nombres du produits
                         </label>
                         <input
                           type="number"

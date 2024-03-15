@@ -43,37 +43,7 @@ const OrderDetailmain = (props) => {
         <Message variant="alert-danger">{error}</Message>
       ) : (
         <div className="card">
-          <header className="card-header p-3 Header-green">
-            <div className="row align-items-center ">
-              <div className="col-lg-6 col-md-6">
-                <span>
-                  <i className="far fa-calendar-alt mx-2"></i>
-                  <b className="text-white">
-                    {moment(order.createdAt).format("llll")}
-                  </b>
-                </span>
-                <br />
-                <small className="text-white mx-3 ">
-                  Order ID: {order._id}
-                </small>
-              </div>
-              <div className="col-lg-6 col-md-6 ms-auto d-flex justify-content-end align-items-center">
-                <select
-                  className="form-select d-inline-block"
-                  style={{ maxWidth: "200px" }}
-                >
-                  <option>Change status</option>
-                  <option>Awaiting payment</option>
-                  <option>Confirmed</option>
-                  <option>Shipped</option>
-                  <option>Delivered</option>
-                </select>
-                <Link className="btn btn-success ms-2" to="#">
-                  <i className="fas fa-print"></i>
-                </Link>
-              </div>
-            </div>
-          </header>
+         
           <div className="card-body">
             {/* Order info */}
             <OrderDetailInfo order={order} />
@@ -89,7 +59,7 @@ const OrderDetailmain = (props) => {
                 <div className="box shadow-sm bg-light">
                   {order.isDelivered ? (
                     <button className="btn btn-success col-12">
-                      DELIVERED AT ({" "}
+                      DELIVRE A ({" "}
                       {moment(order.isDeliveredAt).format("MMM Do YY")})
                     </button>
                   ) : (
@@ -99,7 +69,7 @@ const OrderDetailmain = (props) => {
                         onClick={deliverHandler}
                         className="btn btn-dark col-12"
                       >
-                        MARK AS DELIVERED
+                        Marquer comme delivrer
                       </button>
                     </>
                   )}

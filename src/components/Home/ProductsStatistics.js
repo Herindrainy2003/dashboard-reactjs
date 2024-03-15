@@ -1,26 +1,74 @@
-import React from "react";
+// import React from "react";
+
+// const ProductsStatistics = () => {
+//   return (
+//     <div className="col-xl-6 col-lg-12">
+//       <div className="card mb-4 shadow-sm">
+//         <article className="card-body">
+//           <h5 className="card-title">Products statistics</h5>
+//           <iframe
+//             style={{
+//               background: "#FFFFFF",
+//               border: "none",
+//               borderRadius: "2px",
+//               boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2);",
+//               width: "100%",
+//               height: "350px",
+//             }}
+//             src="https://charts.mongodb.com/charts-shoeshoptutorial-bzbxw/embed/charts?id=1f926980-090b-44c6-b011-3e94b2efddca&maxDataAge=3600&theme=light&autoRefresh=true"
+//           ></iframe>
+//         </article>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ProductsStatistics;
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Chart from 'chart.js/auto';
 
 const ProductsStatistics = () => {
-  return (
-    <div className="col-xl-6 col-lg-12">
-      <div className="card mb-4 shadow-sm">
-        <article className="card-body">
-          <h5 className="card-title">Products statistics</h5>
-          <iframe
-            style={{
-              background: "#FFFFFF",
-              border: "none",
-              borderRadius: "2px",
-              boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2);",
-              width: "100%",
-              height: "350px",
-            }}
-            src="https://charts.mongodb.com/charts-shoeshoptutorial-bzbxw/embed/charts?id=1f926980-090b-44c6-b011-3e94b2efddca&maxDataAge=3600&theme=light&autoRefresh=true"
-          ></iframe>
-        </article>
-      </div>
-    </div>
-  );
+    const [stats, setStats] = useState({});
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('/api/stats'); // Assuming your backend server is running on the same host
+                setStats(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (stats.totalCount) {
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Total Count'],
+                    datasets: [{
+                        label: 'Total Count',
+                        data: [stats.totalCount],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                }
+            });
+        }
+    }, [stats]);
+
+    return (
+        <div>
+            <h2>Statistique</h2>
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+    );
 };
 
 export default ProductsStatistics;

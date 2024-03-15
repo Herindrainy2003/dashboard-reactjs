@@ -6,7 +6,7 @@ import { deleteProduct } from "../../Redux/Actions/ProductActions";
 const Product = (props) => {
   const { product } = props;
   const dispatch = useDispatch();
-
+  
   const deletehandler = (id) => {
     if (window.confirm("Are you sure??")) {
       dispatch(deleteProduct(id));
@@ -24,7 +24,7 @@ const Product = (props) => {
             <Link to="#" className="title text-truncate">
               {product.name}
             </Link>
-            <div className="price mb-2">${product.price}</div>
+            <div className="price mb-2">Ar{product.price}</div>
             <div className="row">
               <Link
                 to={`/product/${product._id}/edit`}

@@ -25,11 +25,11 @@ a.disabled {
   pointer-events: none;
 }
 .btn-primary {
-  background-color: #4fa607 !important;
-  border: 1px solid #4fa607 !important;
+  background-color: #dd0a0a !important;
+  border: 1px solid #dd0a0a !important;
 }
 .Header-green {
-  background-color: #4fa607;
+  background-color: #dd0a0a;
 }
 /* .screen-overlay {
   width: 0%;
@@ -228,7 +228,7 @@ body.offcanvas-active {
   border: 2px solid #eee;
 }
 .nav-item img.rounded-circle:hover {
-  border-color: #4fa607;
+  border-color: #eee42a;
 }
 
 .content-header {
@@ -315,7 +315,7 @@ body.aside-mini .menu-aside .menu-item.has-submenu .menu-link:after {
   font-size: 18px;
 }
 .menu-aside .active .icon {
-  color: #4fa607;
+  color: #c1c628;
 }
 .menu-aside .active {
   background-color: #ebf0fd;
